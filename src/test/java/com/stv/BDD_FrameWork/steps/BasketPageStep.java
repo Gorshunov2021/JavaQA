@@ -20,7 +20,7 @@ public class BasketPageStep extends BasicFactoryTest {
     public void openHomePage() {
         WebDriver driver = getDriver();
         driver.get(START_URL);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 

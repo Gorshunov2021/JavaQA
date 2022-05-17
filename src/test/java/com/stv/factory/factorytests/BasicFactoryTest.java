@@ -14,7 +14,7 @@ public class BasicFactoryTest {
         return Driver.getDriver();
     }
 
-    @BeforeClass(description = "Start browser")
+    @BeforeClass(description = "Start My Browser")
     public void setUp() {
         WebDriver driver = getDriver();
         driver.get(START_URL);

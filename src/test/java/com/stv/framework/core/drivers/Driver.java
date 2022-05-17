@@ -12,7 +12,7 @@ public class Driver {
 
         if (driver == null) {
             setChromeDriver();
-//            setFireFox();
+//           setFireFox();
         }
         return driver;
     }
