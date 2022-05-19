@@ -8,14 +8,18 @@ public class MainFactoryPage extends FactoryPage {
     @FindBy(id = "accountLink")
     private WebElement accountLink;
 
-    public boolean isAccountLinkDisplayed(){
+    public boolean isAccountLinkDisplayed() {
         return accountLink.isDisplayed();
+    }
+
+    public void clickOnAccountLink() {
+        accountLink.click();
     }
 
     @FindBy(xpath = "//button[contains(text(),'Accept All Cookies')]")
     private WebElement trustButton;
 
-    public void clickOnTrustButton(){
+    public void clickOnTrustButton() {
         trustButton.click();
     }
 
@@ -27,10 +31,10 @@ public class MainFactoryPage extends FactoryPage {
         return new WishlistPage();
     }
 
-    @FindBy(id="truste-consent-button")
+    @FindBy(id = "truste-consent-button")
     private WebElement acceptClick;
 
-    public MainFactoryPage  clickStart() {
+    public MainFactoryPage clickStart() {
         acceptClick.click();
         return this;
     }
@@ -40,12 +44,9 @@ public class MainFactoryPage extends FactoryPage {
 
     public BasketPage clickOnBASKETlist() {
         basketLink.click();
-        return  new BasketPage();
+        return new BasketPage();
     }
 
-    public void clickOnAccountLink(){
-        accountLink.click();
-    }
 
 }
 
