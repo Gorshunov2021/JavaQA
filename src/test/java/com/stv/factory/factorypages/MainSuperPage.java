@@ -19,11 +19,7 @@ public class MainSuperPage extends FactoryPage {
     private WebElement trustButton;
 
     public void clickOnTrustButton() {
-        try {
             trustButton.click();
-        } catch (NoSuchElementException e){
-            return;
-        }
     }
 
     //SUPER TEST - 2 STEPS !
@@ -35,7 +31,6 @@ public class MainSuperPage extends FactoryPage {
     public void clickOnFLagLink() {
         FlagLink.click();
     }
-
 
     // 3. Убедиться, что что button <Close> есть.
     @FindBy(xpath = "//button[@class=\"bem-language-selector__button--secondary\"]")
@@ -57,14 +52,6 @@ public class MainSuperPage extends FactoryPage {
 
     public boolean isIconChatDisplayed() {
         return IconChatNow.isDisplayed();
-    }
-
-    // 6. В поле <Search> втайпать Cycle
-    @FindBy(className = "bem-header__search")
-    private WebElement Input;
-
-    public boolean isTextCycleDisplayed() {
-        return Input.isDisplayed();
     }
 
 }

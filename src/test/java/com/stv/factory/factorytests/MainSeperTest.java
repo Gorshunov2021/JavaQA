@@ -43,11 +43,4 @@ public class MainSeperTest extends BasicFactoryTest {
         Assert.assertEquals(actualResult, true, "Icon Chat isn't visible!!!");
     }
 
-    @Test(description = "Assert text Cycle is visible", dependsOnMethods = "isIconChatDisplayed")
-    public void searchRequestInputIsDisplayed(String string) {
-
-        boolean actualResult = mainSuperPage.isTextCycleDisplayed();
-        Assert.assertEquals(actualResult, true, "Text isn't visible!!!");
-    }
-
 }
