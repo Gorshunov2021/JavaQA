@@ -34,7 +34,20 @@ public class MainSeperTest extends BasicFactoryTest {
     @Test(description = "Assert the Button <Close> is hidden", dependsOnMethods = "assertButtonCLoseIsDisplayed")
     public void assertButtonCLoseIsHidden() {
         boolean actualResult = mainSuperPage.clickOnButtonClose();
-        Assert.assertEquals(actualResult, true, "Button CLose isn't visible!!!");
+        Assert.assertEquals(actualResult, true, "Button CLose isn't hidden!");
+    }
+
+    @Test(description = "Assert the Icon Chat Now is visible", dependsOnMethods = "assertButtonCLoseIsHidden")
+    public void isIconChatDisplayed() {
+        boolean actualResult = mainSuperPage.isIconChatDisplayed();
+        Assert.assertEquals(actualResult, true, "Icon Chat isn't visible!!!");
+    }
+
+    @Test(description = "Assert text Cycle is visible", dependsOnMethods = "isIconChatDisplayed")
+    public void searchRequestInputIsDisplayed(String string) {
+
+        boolean actualResult = mainSuperPage.isTextCycleDisplayed();
+        Assert.assertEquals(actualResult, true, "Text isn't visible!!!");
     }
 
 }

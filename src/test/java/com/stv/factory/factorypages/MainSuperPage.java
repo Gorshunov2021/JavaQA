@@ -1,5 +1,6 @@
 package com.stv.factory.factorypages;
 
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -18,7 +19,11 @@ public class MainSuperPage extends FactoryPage {
     private WebElement trustButton;
 
     public void clickOnTrustButton() {
-        trustButton.click();
+        try {
+            trustButton.click();
+        } catch (NoSuchElementException e){
+            return;
+        }
     }
 
     //SUPER TEST - 2 STEPS !
@@ -32,7 +37,7 @@ public class MainSuperPage extends FactoryPage {
     }
 
 
-    // 3.	Убедиться, что что button <Close> есть.
+    // 3. Убедиться, что что button <Close> есть.
     @FindBy(xpath = "//button[@class=\"bem-language-selector__button--secondary\"]")
     private WebElement ButtonClose;
 
@@ -40,10 +45,26 @@ public class MainSuperPage extends FactoryPage {
         return ButtonClose.isDisplayed();
     }
 
-    // 4.	Кликнуть на button <Close> и панель должна исчезнуть .
+    // 4. Кликнуть на button <Close> и панель должна исчезнуть .
     public boolean clickOnButtonClose() {
         ButtonClose.click();
         return true;
+    }
+
+    // 5. Убедиться, что на главной странице есть иконка <Need help?>
+    @FindBy(xpath = "//a[@id='egain-live-chat']")
+    private WebElement IconChatNow;
+
+    public boolean isIconChatDisplayed() {
+        return IconChatNow.isDisplayed();
+    }
+
+    // 6. В поле <Search> втайпать Cycle
+    @FindBy(className = "bem-header__search")
+    private WebElement Input;
+
+    public boolean isTextCycleDisplayed() {
+        return Input.isDisplayed();
     }
 
 }
